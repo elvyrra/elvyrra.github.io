@@ -701,7 +701,7 @@
 </span></span><span id="508" class="l"><a href="#508">508 </a><span class="php-comment">     * Register the submitted data in the database
 </span></span><span id="509" class="l"><a href="#509">509 </a><span class="php-comment">     * @param bool $exit If set to true, the script will output after function execution, not depending on the result
 </span></span><span id="510" class="l"><a href="#510">510 </a><span class="php-comment">     * @param string $success Defines the message to output if the action has been well executed
-</span></span><span id="511" class="l"><a href="#511">511 </a><span class="php-comment">     * @param string $error Defines the message to output if an error occured
+</span></span><span id="511" class="l"><a href="#511">511 </a><span class="php-comment">     * @param string $error Defines the message to output if an error occurred
 </span></span><span id="512" class="l"><a href="#512">512 </a><span class="php-comment">     * @return mixed The id of the created or updated element in the database
 </span></span><span id="513" class="l"><a href="#513">513 </a><span class="php-comment">     */</span>
 </span><span id="514" class="l"><a href="#514">514 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> register(<span class="php-var">$exit</span> = self::EXIT_JSON, <span class="php-var">$success</span> = <span class="php-quote">&quot;&quot;</span>, <span class="php-var">$error</span> = <span class="php-quote">&quot;&quot;</span>){
@@ -760,7 +760,7 @@
 </span><span id="567" class="l"><a href="#567">567 </a>        }
 </span><span id="568" class="l"><a href="#568">568 </a>        <span class="php-keyword1">catch</span>(DBException <span class="php-var">$e</span>){
 </span><span id="569" class="l"><a href="#569">569 </a>            <span class="php-var">$this</span>-&gt;status = self::STATUS_ERROR;
-</span><span id="570" class="l"><a href="#570">570 </a>            App::logger()-&gt;error(<span class="php-quote">'An error occured while registering data on the form '</span> . <span class="php-var">$this</span>-&gt;id . <span class="php-quote">' : '</span> . <span class="php-var">$e</span>-&gt;getMessage());
+</span><span id="570" class="l"><a href="#570">570 </a>            App::logger()-&gt;error(<span class="php-quote">'An error occurred while registering data on the form '</span> . <span class="php-var">$this</span>-&gt;id . <span class="php-quote">' : '</span> . <span class="php-var">$e</span>-&gt;getMessage());
 </span><span id="571" class="l"><a href="#571">571 </a>            <span class="php-keyword1">if</span>(<span class="php-var">$exit</span>){
 </span><span id="572" class="l"><a href="#572">572 </a>                <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;response(self::STATUS_ERROR, DEBUG_MODE ? <span class="php-var">$e</span>-&gt;getMessage() : (<span class="php-var">$error</span> ? <span class="php-var">$error</span> : Lang::get(<span class="php-quote">'form.error-register'</span>)));
 </span><span id="573" class="l"><a href="#573">573 </a>            }
@@ -773,7 +773,7 @@
 </span></span><span id="580" class="l"><a href="#580">580 </a><span class="php-comment">     * Delete the element from the database
 </span></span><span id="581" class="l"><a href="#581">581 </a><span class="php-comment">     * @param bool $exit If set to true, the script will output after function execution, not depending on the result
 </span></span><span id="582" class="l"><a href="#582">582 </a><span class="php-comment">     * @param string $success Defines the message to output if the action has been well executed
-</span></span><span id="583" class="l"><a href="#583">583 </a><span class="php-comment">     * @param string $error Defines the message to output if an error occured
+</span></span><span id="583" class="l"><a href="#583">583 </a><span class="php-comment">     * @param string $error Defines the message to output if an error occurred
 </span></span><span id="584" class="l"><a href="#584">584 </a><span class="php-comment">     * @return mixed The id of the deleted object
 </span></span><span id="585" class="l"><a href="#585">585 </a><span class="php-comment">     */</span>
 </span><span id="586" class="l"><a href="#586">586 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">delete</span>(<span class="php-var">$exit</span> = self::EXIT_JSON, <span class="php-var">$success</span> = <span class="php-quote">&quot;&quot;</span>, <span class="php-var">$error</span> = <span class="php-quote">&quot;&quot;</span>){
@@ -806,7 +806,7 @@
 </span><span id="613" class="l"><a href="#613">613 </a>        }
 </span><span id="614" class="l"><a href="#614">614 </a>        <span class="php-keyword1">catch</span>(DBException <span class="php-var">$e</span>){
 </span><span id="615" class="l"><a href="#615">615 </a>            <span class="php-var">$this</span>-&gt;status = self::STATUS_ERROR;
-</span><span id="616" class="l"><a href="#616">616 </a>            App::logger()-&gt;error(<span class="php-quote">'An error occured while deleting the element of the form '</span> . <span class="php-var">$this</span>-&gt;id . <span class="php-quote">' : '</span> . <span class="php-var">$e</span>-&gt;getMessage());
+</span><span id="616" class="l"><a href="#616">616 </a>            App::logger()-&gt;error(<span class="php-quote">'An error occurred while deleting the element of the form '</span> . <span class="php-var">$this</span>-&gt;id . <span class="php-quote">' : '</span> . <span class="php-var">$e</span>-&gt;getMessage());
 </span><span id="617" class="l"><a href="#617">617 </a>
 </span><span id="618" class="l"><a href="#618">618 </a>            <span class="php-keyword1">if</span>(<span class="php-var">$exit</span>){
 </span><span id="619" class="l"><a href="#619">619 </a>                <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;response(self::STATUS_ERROR, DEBUG_MODE ? <span class="php-var">$e</span>-&gt;getMessage() : (<span class="php-var">$error</span> ? <span class="php-var">$error</span> : Lang::get(<span class="php-quote">'form.error-delete'</span>)));
@@ -860,7 +860,7 @@
 </span><span id="667" class="l"><a href="#667">667 </a>                <span class="php-keyword1">break</span>;
 </span><span id="668" class="l"><a href="#668">668 </a>
 </span><span id="669" class="l"><a href="#669">669 </a>            <span class="php-keyword1">case</span> self::STATUS_CHECK_ERROR :
-</span><span id="670" class="l"><a href="#670">670 </a>                <span class="php-comment">// An error occured while checking field syntaxes</span>
+</span><span id="670" class="l"><a href="#670">670 </a>                <span class="php-comment">// An error occurred while checking field syntaxes</span>
 </span><span id="671" class="l"><a href="#671">671 </a>                App::response()-&gt;setStatus(self::HTTP_CODE_CHECK_ERROR);
 </span><span id="672" class="l"><a href="#672">672 </a>                <span class="php-var">$response</span>[<span class="php-quote">'message'</span>] = <span class="php-var">$message</span> ? <span class="php-var">$message</span> : Lang::get(<span class="php-quote">'form.error-fill'</span>);
 </span><span id="673" class="l"><a href="#673">673 </a>                <span class="php-var">$response</span>[<span class="php-quote">'errors'</span>] = <span class="php-var">$this</span>-&gt;errors;
